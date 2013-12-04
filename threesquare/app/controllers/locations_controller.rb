@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
 	
 	def landing_page
 	end
-	
+
 	def show
 	end
 
