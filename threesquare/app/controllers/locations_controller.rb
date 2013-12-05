@@ -25,9 +25,16 @@ class LocationsController < ApplicationController
 	end
 
 	def edit
+		@location = Location.find(params[:id])
 	end
 
 	def update
+		@location = Location.find(params[:id])
+		@location.update(location_params)
+		
+		# After editing a location review,
+		# redirect to see newly edited review
+		redirect_to location_path(@location) 
 	end
 
 	def destroy
