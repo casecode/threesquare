@@ -1,0 +1,25 @@
+<button><%= link_to "Home", root_url %></button>
+
+<h1>Location Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |loc| %>
+      <tr>
+        <td><%= loc.name %>&nbsp;</td>
+        <td><%= link_to 'Show Review', loc %>&nbsp;</td>
+        <td><%= link_to 'Edit Review', edit_location_path(loc) %>&nbsp;</td>
+        <td><%= link_to 'Delete Review', loc, method: :delete, data: { confirm: "Are you sure you want to delete the review for #{loc.name}?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
